@@ -53,4 +53,25 @@ public class QueryResolver implements GraphQLRootResolver {
         // which fetches all UE entities (e.g., from a database or a static list)
         return helper.getListeUE();
     }
+
+    /**
+     * Récupère une UE selon son code.
+     */
+    public UniteEnseignement getUEByCode(int code) {
+        return helper.getUEByCode(code);
+    }
+
+    /**
+     * Récupère les UEs appartenant à un domaine donné.
+     */
+    public List<UniteEnseignement> getUEsByDomaine(String domaine) {
+        return helper.getUEByDomaine(domaine);
+    }
+
+    /**
+     * Récupère les UEs selon le semestre.
+     */
+    public List<UniteEnseignement> getUEsBySemestre(int semestre) {
+        return helper.getUEBySemestre(semestre);
+    }
 }

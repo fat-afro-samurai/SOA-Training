@@ -54,4 +54,18 @@ public class MutationResolver implements GraphQLRootResolver {
         // The helper handles the actual persistence or logic of adding the entity
         return helper.addUniteEnseignement(ue);
     }
+    /**
+     * Met à jour une UE existante.
+     */
+    public boolean updateUniteEnseignement(int code, String domaine, String responsable, int credits, int semestre) {
+        UniteEnseignement updatedUE = new UniteEnseignement(code, domaine, responsable, credits, semestre);
+        return helper.updateUniteEnseignement(code, updatedUE);
+    }
+
+    /**
+     * Supprime une UE par son code.
+     */
+    public boolean deleteUniteEnseignement(int code) {
+        return helper.deleteUniteEnseignement(code);
+    }
 }
